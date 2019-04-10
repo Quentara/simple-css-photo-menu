@@ -1,0 +1,113 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:400,700);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  font-size: 45px;
+  font-weight: 700;
+  margin: 50px 0;
+}
+
+.content {
+  min-height: 100vh;
+  max-height: 100%;
+  padding: 25px;
+  background: linear-gradient(to bottom right,rgba(33, 147, 175),rgba(109, 213, 237));
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pic-item {
+  flex-grow: 1;
+  flex-basis: 30%;
+  min-width: 320px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+  border-radius: 15px;
+}
+
+div.pic-item img {
+  float: left;
+  width: 100%;
+  min-width: 320px;
+}
+
+div.pic-item:hover img {
+ opacity: 0.5;
+ filter: grayscale(100%);
+}
+
+.red {
+  background: #EF255F;
+  color: #EF255F;
+}
+
+.blue {
+  background: #085F63;
+  color: #085F63;
+}
+
+.green {
+  background: #FF9A3C;
+  color: #FF9A3C;
+}
+
+div.pic-item * {
+  transition: all 500ms ease-in-out;
+}
+
+div.pic-item i {
+  background: #fff;
+  padding: 15px;
+  width: 75px;
+  height: 75px;
+  font-size: 45px;
+  text-align: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -75%) scale(0);
+  transition: transform 300ms 100ms ease-out;
+}
+
+div.pic-item:hover i {
+  transform: translate(-50%, -75%) scale(1);
+  transition: transform 500ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+div.pic-item span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  font-size: 20px;
+  transform: translate(-50%, 125%) scale(0);
+  transition: transform 300ms 100ms ease-out;
+}
+
+div.pic-item:hover span {
+  transform: translate(-50%, 125%) scale(1);
+  transition: transform 500ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
