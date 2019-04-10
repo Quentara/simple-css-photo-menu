@@ -10,22 +10,58 @@
 body {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 400;
+  line-height: 1.7;
   color: #fff;
 }
 
-h1 {
+/* Hero Section */
+
+.header {
+  position: relative;
+  height: 35vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.75),
+      rgba(85, 197, 122, 0.75),
+      rgba(40, 180, 133, 0.75)),
+  url('../img/hero.jpg');
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.header__title-box {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 45px;
+}
+
+.title-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.title-primary--main {
+  display: block;
+  font-weight: 400;
+  font-size: 58px;
+  letter-spacing: 16px;
+  line-height: 1em;
+  animation: moveToBottom 2s ease-in-out;
+}
+
+.title-primary--sub {
+  display: block;
   font-weight: 700;
-  margin: 50px 0;
+  font-size: 25px;
+  letter-spacing: 20px;
+  animation: moveToTop 2s ease-in-out;
 }
 
 .content {
-  min-height: 100vh;
-  max-height: 100%;
-  padding: 25px;
-  background: linear-gradient(to bottom right,rgba(33, 147, 175),rgba(109, 213, 237));
-  background-size: cover;
+  padding: 100px 50px;
 }
 
 .container {
@@ -41,44 +77,42 @@ h1 {
   overflow: hidden;
   position: relative;
   float: left;
-  margin: 10px;
+  margin: 20px;
   text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.75),
+      rgba(85, 197, 122, 0.75),
+      rgba(40, 180, 133, 0.75));
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),
+  0 5px 15px 0 rgba(0,0,0,0.08);
   border-radius: 15px;
+  animation: moveToTop 2s ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
-div.pic-item img {
+.pic-item:hover {
+  transform: translateY(-10px);
+}
+
+.pic-item * {
+  transition: all 500ms ease-in-out;
+}
+
+.pic-item img {
   float: left;
   width: 100%;
   min-width: 320px;
 }
 
-div.pic-item:hover img {
+.pic-item:hover img {
  opacity: 0.5;
  filter: grayscale(100%);
 }
 
-.red {
-  background: #EF255F;
-  color: #EF255F;
-}
-
-.blue {
-  background: #085F63;
-  color: #085F63;
-}
-
-.green {
-  background: #FF9A3C;
-  color: #FF9A3C;
-}
-
-div.pic-item * {
-  transition: all 500ms ease-in-out;
-}
-
-div.pic-item i {
+.pic-item i {
   background: #fff;
+  color: rgb(40, 180, 133);
   padding: 15px;
   width: 75px;
   height: 75px;
@@ -92,12 +126,12 @@ div.pic-item i {
   transition: transform 300ms 100ms ease-out;
 }
 
-div.pic-item:hover i {
+.pic-item:hover i {
   transform: translate(-50%, -75%) scale(1);
   transition: transform 500ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-div.pic-item span {
+.pic-item span {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -107,7 +141,53 @@ div.pic-item span {
   transition: transform 300ms 100ms ease-out;
 }
 
-div.pic-item:hover span {
+.pic-item:hover span {
   transform: translate(-50%, 125%) scale(1);
   transition: transform 500ms 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Footer */
+
+.footer {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.75),
+      rgba(85, 197, 122, 0.75),
+      rgba(40, 180, 133, 0.75));
+  padding: 25px 50px;
+  text-align: right;
+}
+
+/* Keyframe Animations */
+
+@keyframes moveToBottom {
+  0% {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+
+  70% {
+      transform: translateY(2px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes moveToTop {
+  0% {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+
+  70% {
+      transform: translateY(-2px);
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }
